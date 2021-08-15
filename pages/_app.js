@@ -29,7 +29,7 @@ export default function App(props) {
         />
         <meta
           property="og:image"
-          content="https://scti.uenf.br/assets/Logo_7.png"
+          content="https://scti.uenf.br/assets/logo_2021.png"
         />
       </Head>
 
