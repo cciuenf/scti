@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
+  "name": "scti",
+  "version": "2021.0.0.1",
+  "reason": { "react-jsx": 3 },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "@rescript/react",
+    "bs-css",
+    "bs-css-emotion",
+    "rescript-polished",
+    "@ryyppy/rescript-promise"
+  ],
+  "warnings": {
+    "error": "+102"
+  }
+}

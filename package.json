@@ -1,0 +1,28 @@
+{
+  "name": "scti",
+  "version": "2021.0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "yarn res:build && next build",
+    "start": "next start",
+    "res:watch": "rescript build -w",
+    "res:build": "rescript build",
+    "res:clean": "rescript clean"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^11.1.0",
+    "@rescript/react": "0.10.3",
+    "@ryyppy/rescript-promise": "2.1.0",
+    "bs-css-emotion": "3.0.0",
+    "framer-motion": "4.1.17",
+    "next": "11.1.0",
+    "next-seo": "^4.22.0",
+    "next-transpile-modules": "8.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-intersection-observer": "8.32.0",
+    "rescript": "^9.1.4",
+    "rescript-polished": "1.15.0"
+  }
+}

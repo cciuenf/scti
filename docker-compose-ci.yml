@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  scti:
+    build:
+      context: .
+      args:
+        NODE_ENV: test
+      cache_from:
+        - ghcr.io/cciuenf/scti_ci:latest
+    image: ghcr.io/cciuenf/scti_ci:latest
+    container_name: scti_front_ci
+    volumes:
+      - /scti/node_modules
+    environment:
+      - NODE_ENV=test
