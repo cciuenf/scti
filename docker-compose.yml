@@ -1,14 +1,14 @@
 version: '3.8'
 
 services:
-  maroon:
+  scti:
     stdin_open: true
     tty: true
     build:
       context: .
       args:
         NODE_ENV: development
-    container_name: scti_front
+    container_name: scti
     command: yarn dev
     restart: unless-stopped
     ports:

@@ -9,7 +9,7 @@ services:
       cache_from:
         - ghcr.io/cciuenf/scti_ci:latest
     image: ghcr.io/cciuenf/scti_ci:latest
-    container_name: scti_front_ci
+    container_name: scti_ci
     volumes:
       - /scti/node_modules
     environment:
