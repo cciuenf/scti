@@ -12,7 +12,7 @@ export default function App(props) {
         </title>
         <meta name="keywords" content="scti, computação, tecnologia, uenf" />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Portuguese" />
         <meta name="author" content="Pedro Leal, Diana de Sales, Ian Louzada, Guilherme Tavares, Luis Fernando Peixotom, Matheus Pessanha" />
         <meta

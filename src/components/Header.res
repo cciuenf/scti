@@ -36,7 +36,7 @@ let make = () => {
   <header>
     <Navbar expand=#lg variant=#dark fixed=#top role="navigation">
       <Navbar.Brand href="/"> {"SCTI"->React.string} </Navbar.Brand>
-      <Navbar.Toggle label="Toggle navigation" ariaControls="navbarDropdown" />
+      <Navbar.Toggle label="Toggle navigation" \"aria-controls"="navbarDropdown" />
       <Navbar.Collapse id="navbarDropdown">
         <Nav navbar=true justify=true variant=#dark className="mr-auto" navbarScroll=true>
           <Nav.Link href="/" active=true> {"Home"->React.string} </Nav.Link>

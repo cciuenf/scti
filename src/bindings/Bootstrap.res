@@ -1,10 +1,10 @@
 module Container = {
-  @module("react-bootstrap/Container") @react.component
-  external make: (~children: React.element) => React.element = "default"
+  @module @react.component
+  external make: (~children: React.element) => React.element = "react-bootstrap/Container"
 }
 
 module Navbar = {
-  @module("react-bootstrap/Navbar") @react.component
+  @module @react.component
   external make: (
     ~id: string=?,
     ~_as: string=?,
@@ -17,37 +17,38 @@ module Navbar = {
     ~variant: [#light | #dark],
     ~collapseOnSelect: bool=?,
     ~sticky: string=?,
-  ) => React.element = "default"
+  ) => React.element = "react-bootstrap/Navbar"
 
   module Brand = {
-    @module("react-bootstrap/Navbar") @react.component
+    @module @react.component
     external make: (
       ~is: string=?,
       ~_as: string=?,
       ~href: string,
       ~children: React.element,
-    ) => React.element = "default"
+    ) => React.element = "react-bootstrap/NavbarBrand"
   }
 
   module Collapse = {
-    @module("react-bootstrap/Navbar") @react.component
-    external make: (~id: string=?, ~children: React.element) => React.element = "default"
+    @module @react.component
+    external make: (~id: string=?, ~children: React.element) => React.element =
+      "react-bootstrap/NavbarCollapse"
   }
 
   module Toggle = {
-    @module("react-bootstrap/Navbar") @react.component
+    @module @react.component
     external make: (
       ~id: string=?,
       ~_as: string=?,
       ~children: React.element=?,
       ~label: string,
-      ~ariaControls: string=?,
-    ) => React.element = "default"
+      ~\"aria-controls": string=?,
+    ) => React.element = "react-bootstrap/NavbarToggle"
   }
 }
 
 module Nav = {
-  @module("react-bootstrap/Nav") @react.component
+  @module @react.component
   external make: (
     ~id: string=?,
     ~className: string=?,
@@ -60,16 +61,16 @@ module Nav = {
     ~role: string=?,
     ~variant: [#light | #dark],
     ~children: React.element,
-  ) => React.element = "default"
+  ) => React.element = "react-bootstrap/Nav"
 
   module Item = {
-    @module("react-bootstrap/Navbar") @react.component
+    @module @react.component
     external make: (~id: string=?, ~children: React.element, ~_as: string=?) => React.element =
-      "default"
+      "react-bootstrap/NavItem"
   }
 
   module Link = {
-    @module("react-bootstrap/Navbar") @react.component
+    @module @react.component
     external make: (
       ~id: string=?,
       ~children: React.element,
@@ -77,6 +78,6 @@ module Nav = {
       ~active: bool=?,
       ~disabled: bool=?,
       ~href: string,
-    ) => React.element = "default"
+    ) => React.element = "react-bootstrap/NavLink"
   }
 }
