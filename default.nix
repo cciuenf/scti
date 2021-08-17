@@ -2,6 +2,7 @@ with import <nixpkgs> {};
 
 mkYarnPackage {
   name = "scti";
+  version = "2021.0.1";
   src = ./.;
   packageJSON = ./package.json;
   yarnLock = ./yarn.lock;
@@ -17,5 +18,5 @@ mkYarnPackage {
     homepage = "https://scti.uenf.br";
     license = licenses.gpl3Plus;
     maintainers = with maintainers; [ matdsoupe ];
-  }
+  };
 }
