@@ -14,7 +14,7 @@ mkYarnPackage {
 
   meta = with lib; {
     description = "Website para a Semana Acadêmica de Ciência da Computação e Tecnologia da Informação";
-    homepage = "";
+    homepage = "https://scti.uenf.br";
     license = licenses.gpl3Plus;
     maintainers = with maintainers; [ matdsoupe ];
   }
