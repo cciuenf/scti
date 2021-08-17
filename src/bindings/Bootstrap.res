@@ -6,6 +6,7 @@ module Container = {
 module Navbar = {
   @module("react-bootstrap/Navbar") @react.component
   external make: (
+    ~id: string=?,
     ~_as: string=?,
     ~children: React.element,
     ~bg: string=?,
@@ -20,41 +21,61 @@ module Navbar = {
 
   module Brand = {
     @module("react-bootstrap/Navbar") @react.component
-    external make: (~_as: string=?, ~href: string, ~children: React.element) => React.element =
-      "default"
+    external make: (
+      ~is: string=?,
+      ~_as: string=?,
+      ~href: string,
+      ~children: React.element,
+    ) => React.element = "default"
+  }
+
+  module Collapse = {
+    @module("react-bootstrap/Navbar") @react.component
+    external make: (~id: string=?, ~children: React.element) => React.element = "default"
   }
 
   module Toggle = {
     @module("react-bootstrap/Navbar") @react.component
-    external make: (~_as: string=?, ~children: React.element=?, ~label: string) => React.element =
-      "default"
+    external make: (
+      ~id: string=?,
+      ~_as: string=?,
+      ~children: React.element=?,
+      ~label: string,
+      ~ariaControls: string=?,
+    ) => React.element = "default"
   }
 }
 
 module Nav = {
   @module("react-bootstrap/Nav") @react.component
   external make: (
-    ~activeKey: int,
+    ~id: string=?,
+    ~className: string=?,
+    ~activeKey: int=?,
+    ~navbarScroll: bool=?,
     ~_as: string=?,
-    ~fill: bool,
-    ~justify: bool,
-    ~navbar: bool,
-    ~role: string,
+    ~fill: bool=?,
+    ~justify: bool=?,
+    ~navbar: bool=?,
+    ~role: string=?,
     ~variant: [#light | #dark],
+    ~children: React.element,
   ) => React.element = "default"
 
   module Item = {
     @module("react-bootstrap/Navbar") @react.component
-    external make: (~children: React.element, ~_as: string=?) => React.element = "default"
+    external make: (~id: string=?, ~children: React.element, ~_as: string=?) => React.element =
+      "default"
   }
 
   module Link = {
     @module("react-bootstrap/Navbar") @react.component
     external make: (
+      ~id: string=?,
       ~children: React.element,
       ~_as: string=?,
-      ~active: bool,
-      ~disabled: bool,
+      ~active: bool=?,
+      ~disabled: bool=?,
       ~href: string,
     ) => React.element = "default"
   }

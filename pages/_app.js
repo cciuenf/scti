@@ -1,6 +1,8 @@
 import Head from "next/head";
 import ReScriptApp from "../src/App.bs";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function App(props) {
   return (
     <>
