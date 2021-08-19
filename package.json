@@ -4,27 +4,34 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debug": "NODE_OPTIONS='--inspect' next",
     "build": "yarn res:build && next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "res:watch": "rescript build -w",
     "res:build": "rescript build",
     "res:clean": "rescript clean"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^11.1.0",
-    "@rescript/react": "0.10.3",
-    "@ryyppy/rescript-promise": "2.1.0",
-    "bootstrap": "5.0.2",
-    "bs-css-emotion": "3.0.0",
     "framer-motion": "4.1.17",
     "next": "11.1.0",
     "next-seo": "^4.22.0",
-    "next-transpile-modules": "8.0.0",
     "react": "17.0.2",
-    "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "17.0.2",
-    "react-intersection-observer": "8.32.0",
+    "react-intersection-observer": "8.32.0"
+  },
+  "devDependencies": {
+    "next-transpile-modules": "8.0.0",
+    "autoprefixer": "^10.3.1",
+    "cssnano": "^5.0.8",
+    "@next/bundle-analyzer": "^11.1.0",
+    "bs-css-emotion": "3.0.0",
+    "gentype": "^4.1.0",
+    "@rescript/react": "0.10.3",
+    "@ryyppy/rescript-promise": "2.1.0",
     "rescript": "^9.1.4",
-    "rescript-polished": "1.15.0"
+    "rescript-polished": "1.15.0",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.7"
   }
 }
