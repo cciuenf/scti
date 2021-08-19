@@ -9,7 +9,8 @@
     "start": "next start -p $PORT",
     "res:watch": "rescript build -w",
     "res:build": "rescript build",
-    "res:clean": "rescript clean"
+    "res:clean": "rescript clean",
+    "res:format": "rescript format -all"
   },
   "dependencies": {
     "framer-motion": "4.1.17",
