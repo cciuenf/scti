@@ -1,4 +1,6 @@
-open Bootstrap
+type navbar = Display | Hide
+
+type action = Toggle
 
 type link = {
   sectionId: string,
@@ -27,24 +29,33 @@ let links = [
 module Link = {
   @react.component
   let make = (~label, ~href) => {
-    <Nav.Link href> {label->React.string} </Nav.Link>
+    <Next.Link href> <a> {label->React.string} </a> </Next.Link>
   }
 }
 
+let toggleNavbarState = state =>
+  switch state {
+  | Display => Hide
+  | Hide => Display
+  }
+
+let navbarReducer = (state, action) =>
+  switch action {
+  | Toggle => toggleNavbarState(state)
+  }
+
 @react.component
 let make = () => {
+  let (_state, _dispatch) = React.useReducer(navbarReducer, Hide)
+
   <header>
-    <Navbar expand=#lg variant=#dark fixed=#top role="navigation">
-      <Navbar.Brand href="/"> {"SCTI"->React.string} </Navbar.Brand>
-      <Navbar.Toggle label="Toggle navigation" \"aria-controls"="navbarDropdown" />
-      <Navbar.Collapse id="navbarDropdown">
-        <Nav navbar=true justify=true variant=#dark className="mr-auto" navbarScroll=true>
-          <Nav.Link href="/" active=true> {"Home"->React.string} </Nav.Link>
-          {links->Render.map(({sectionId, label}, id) =>
-            <Link href={sectionId} key={id->Render.toString} label />
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <navbar role="navigation">
+      <nav className="mr-auto">
+        <Link href="/" label="Home" />
+        {links->Render.map(({sectionId, label}, id) =>
+          <Link href={sectionId} key={id->Render.toString} label />
+        )}
+      </nav>
+    </navbar>
   </header>
 }
