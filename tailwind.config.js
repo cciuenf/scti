@@ -1,48 +1,44 @@
 module.exports = {
   purge: {
-    // Configura todos os diretórios contendo nossos arquivos de template
-    // Specify the paths to all of the template files in your project
-    content: [
-      './src/components/**/*.res',
-      './src/layouts/**/*.res',
-      './src/*.res',
-    ],
+    content: ['./src/**/*.res'],
     options: {
-      safelist: ["html", "body"],
-    }
+      safelist: ['html', 'body'],
+    },
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
-    extend: {
+    colors: {
+      blue: {
+        DEFAULT: '#0C7DD8',
+        2: '#4375E8',
+      },
+      'dark-blue':  '#002644',
+      lilac: '#6D6BF1',
+      purple: {
+        DEFAULT: '#A94EF1',
+        2: '#CD24E8'
+      },
+      magenta: '#CD24E8',
+      red: '#F34343'
     },
-    /* É muito comum customizarmos o tamanho das fontes,
-      então adicionamos mais valores dentre os padrões do
-      Tailwind e sobrescrevemos alguns dos já existentes */
-    /* Most of the time we customize the font-sizes,
-     so we added the Tailwind default values here for
-     convenience */
     fontSize: {
-      xs: ".75rem",
-      sm: ".875rem",
-      base: "1rem",
-      lg: "1.125rem",
-      xl: "1.25rem",
-      '2xl': "1.5rem",
-      '3xl': "1.875rem",
-      '4xl': "2.25rem",
-      '5xl': "3rem",
-      '6xl': "4rem"
+      xs: '.75rem',
+      sm: '.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '4rem',
     },
-    // Sobrescrevemos as familias de fontes com nossos padrões
-    // We override the default font-families with our own default prefs
     fontFamily: {
-      'sans':['-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', 'Arial', 'sans-serif'],
-      'serif': ['Georgia', '-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', 'Arial', 'sans-serif'], 
-      'mono': [ 'Menlo', 'Monaco', 'Consolas', 'Roboto Mono', 'SFMono-Regular', 'Segoe UI', 'Courier', 'monospace']
+      serif: ["Spartan"]
     },
   },
   variants: {
-    width: ['responsive']
+    width: ['responsive'],
   },
-  plugins: []
-}
+  plugins: [],
+};
