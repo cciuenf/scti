@@ -19,7 +19,8 @@
     "bs-css",
     "bs-css-emotion",
     "rescript-polished",
-    "@ryyppy/rescript-promise"
+    "@ryyppy/rescript-promise",
+    "@octod/rescript-react-icons"
   ],
   "warnings": {
     "error": "+102"
