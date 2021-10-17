@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: {
     content: ['./src/**/*.res'],
@@ -7,19 +9,32 @@ module.exports = {
   },
   darkMode: false,
   theme: {
-    colors: {
-      blue: {
-        DEFAULT: '#0C7DD8',
-        2: '#4375E8',
+    extend: {
+      height: {
+        '5.5/6': '93%'
       },
-      'dark-blue':  '#002644',
-      lilac: '#6D6BF1',
-      purple: {
-        DEFAULT: '#A94EF1',
-        2: '#CD24E8'
+      width: {
+        '5.5/6': '97.6%'
       },
-      magenta: '#CD24E8',
-      red: '#F34343'
+      colors: {
+        blue: {
+          DEFAULT: '#0C7DD8',
+          2: '#4375E8',
+          3: '#002644'
+        },
+        lilac: '#6D6BF1',
+        purple: {
+          DEFAULT: '#A94EF1',
+          2: '#CD24E8'
+        },
+        magenta: '#CD24E8',
+        red: '#F34343',
+        gray: '#EBF0F1',
+        white: {
+          DEFAULT: colors.white,
+          2: '#F0F8FF'
+        }
+      },
     },
     fontSize: {
       xs: '.75rem',
@@ -34,11 +49,11 @@ module.exports = {
       '6xl': '4rem',
     },
     fontFamily: {
-      serif: ["Spartan"]
+      serif: ['Spartan']
     },
   },
   variants: {
     width: ['responsive'],
-  },
-  plugins: [],
+    linearGradients: ['hover', 'responsive']
+  }
 };

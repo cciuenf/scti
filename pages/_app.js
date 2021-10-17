@@ -1,6 +1,8 @@
 import Head from "next/head";
 import ReScriptApp from "../src/App.mjs";
 
+import "../styles/main.css";
+
 export default function App(props) {
   return (
     <>
