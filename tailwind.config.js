@@ -11,10 +11,14 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        '5.5/6': '93%'
+        '5.5/6': '93%',
+        100: '28.516rem',
+        150: '77.031rem'
       },
       width: {
-        '5.5/6': '97.6%'
+        '5.5/6': '97.6%',
+        104: '30.083rem',
+        200: '125.625rem'
       },
       colors: {
         blue: {
@@ -35,6 +39,13 @@ module.exports = {
           2: '#F0F8FF'
         }
       },
+      backgroundSize: {
+        '100%': '100%'
+      }
+    },
+    backgroundImage: {
+      'vector-1': 'url("/assets/geometry/landing/vector_1.svg")',
+      'vector-1-sm': 'url("/assets/geometry/landing/vector_1_mobile.svg")'
     },
     fontSize: {
       xs: '.75rem',

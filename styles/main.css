@@ -16,6 +16,7 @@
 body {
   font: 400 1.350rem 'Spartan', sans-serif;
   background: #000;
+  /* #e5e5e5; */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -60,6 +61,11 @@ button {
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 100;
+}
+
+#button-link-container {
+  background: linear-gradient(90deg, #4375E8 0%, #A94EF1 100%);
 }
 
 #button-link:hover {

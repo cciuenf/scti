@@ -1,109 +1,47 @@
-type navbar = Display | Hide
+let symplaURL = "https://www.sympla.com.br/semana-da-ciencia-da-computacao-e-tecnologia-da-informacao--scti-2021__1263117"
 
-type action = Toggle
-
-type link = {
-  sectionId: string,
-  label: string,
-}
-
-let links = [
-  {
-    sectionId: "#sec-sobre",
-    label: "Sobre",
-  },
-  {
-    sectionId: "#programacao",
-    label: `Programação`,
-  },
-  {
-    sectionId: "#sec-apoio",
-    label: "Apoio",
-  },
-  {
-    sectionId: "#sec-contato",
-    label: "Contato",
-  },
-]
-
-let toggleNavbarState = state =>
-  switch state {
-  | Display => Hide
-  | Hide => Display
-  }
-
-let navbarReducer = (state, action) =>
-  switch action {
-  | Toggle => toggleNavbarState(state)
-  }
-
-module Link = {
+module HeaderWrapper = {
   @react.component
-  let make = (~label, ~href) => {
-    let baseStyles = "my-6 ml-4 hover:bg-gray rounded-3xl p-4 text-left cursor-pointer"
-    let mdStyles = Helpers.mergeStyles([
-        "border-b-2",
-        "hover:border-white",
-        "md:hover:bg-transparent",
-        "md:rounded-none",
-        "mx-10",
-        "transition",
-        "duration-500"
-      ])
+  let make = (~children, ~sm=false) => {
+    let baseStyles = " bg-no-repeat h-5/6 flex flex-col justify-around items-center"
+    let styles =
+      switch sm {
+      | false => "bg-vector-1"
+      | true => "bg-vector-1-sm"
+      } ++
+      baseStyles
 
-    <li className={baseStyles ++ " " ++ mdStyles}>
-      <Next.Link href>
-        <a className="text-3xl text-blue md:text-white-2"> {label->React.string} </a>
-      </Next.Link>
-    </li>
+    let id = sm ? "mobile-header-bg" : "desktop-header-bg"
+
+    <header id className={styles}> children </header>
   }
 }
 
-module Menu = {
+module Summary = {
   @react.component
-  let make = () => {
-    let mdStyles = "md:flex md:justify-evenly"
-
-    <ul className={`p-4 ${mdStyles}`}>
-      {links->Render.map(({sectionId, label}, id) =>
-        <Link href={sectionId} key={id->Render.toString} label />
-      )}
-    </ul>
-  }
+  let make = () =>
+    <main className="flex flex-col items-center justify-between h-3/5 w-full">
+      <h1 className="text-white text-center font-semibold text-4xl leading-snug">
+        {`11ª Semana de Ciência da Computação e Tecnologia da Informação`->React.string}
+      </h1>
+      <hr className="md:hidden border-2 border-white w-72" />
+      <p className="text-white-2 text-center leading-snug w-4/5">
+        {`Uma semana inteira de conteúdos, que acontecerá entre os dias 8 a 13 de novembro, sendo transmitido por uma plataforma privada no Discord!`->React.string}
+      </p>
+      <Next.Image
+        src="/assets/images/welcome.svg"
+        width="262"
+        height="209"
+        alt="Uma pessoa interagindo com seu notebook no colo, num evento presencial"
+      />
+    </main>
 }
 
 @react.component
 let make = () => {
-  let mobilemenuRef = React.useRef(Js.Nullable.null)
-  let (state, dispatch) = React.useReducer(navbarReducer, Hide)
+  let isSm = ReactUse.useMedia("(max-width: 640px)")
 
-  ReactUse.useClickAway(mobilemenuRef, _e => dispatch(Toggle))
-
-  let mobilemenuDomRef = ReactDOM.Ref.domRef(mobilemenuRef)
-
-  <header>
-    <navbar role="navigation">
-      <nav className="flex flex-wrap p-4 text-lg items-center justify-center">
-        <Next.Link href="/">
-          <Next.Image
-            className="cursor-pointer"
-            width="260"
-            height="50"
-            src="/assets/logo.svg"
-            alt="Logo SCTI"
-          />
-        </Next.Link>
-        <button className="md:hidden block" onClick={_e => dispatch(Toggle)}>
-          <Next.Image
-            width="30" height="30" src="/assets/navbar_hamburguer.svg" alt="Hamburguer menu icon"
-          />
-        </button>
-        <div className="flex items-center justify-evenly hidden md:block"> <Menu /> </div>
-        {switch state {
-        | Display => <div className="md:hidden mobile-menu" ref={mobilemenuDomRef}> <Menu /> </div>
-        | Hide => React.null
-        }}
-      </nav>
-    </navbar>
-  </header>
+  <HeaderWrapper sm={isSm}>
+    <Navbar /> <Summary /> <LinkButton href={symplaURL} label="Inscreva-se" />
+  </HeaderWrapper>
 }
