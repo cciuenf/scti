@@ -11,9 +11,7 @@ module HeaderWrapper = {
       } ++
       baseStyles
 
-    let id = sm ? "mobile-header-bg" : "desktop-header-bg"
-
-    <header id className={styles}> children </header>
+    <header className={styles}> children </header>
   }
 }
 

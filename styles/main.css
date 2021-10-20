@@ -15,7 +15,7 @@
 
 body {
   font: 400 1.350rem 'Spartan', sans-serif;
-  background: #000;
+  background: #fff;
   /* #e5e5e5; */
   -webkit-font-smoothing: antialiased;
 }
@@ -74,4 +74,9 @@ button {
 
 #button-link:hover > span {
   color: #fff;
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #4375E8 0%, #A94EF1 100%) 1;
 }
