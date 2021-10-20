@@ -11,7 +11,6 @@ mkShell {
     eslint
     prettier
 
-    ninja
     python39
   ];
 

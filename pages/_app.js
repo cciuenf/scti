@@ -1,7 +1,7 @@
 import Head from "next/head";
-import ReScriptApp from "../src/App.bs";
+import ReScriptApp from "../src/App.mjs";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/main.css";
 
 export default function App(props) {
   return (

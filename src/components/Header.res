@@ -1,50 +1,47 @@
-open Bootstrap
+let symplaURL = "https://www.sympla.com.br/semana-da-ciencia-da-computacao-e-tecnologia-da-informacao--scti-2021__1263117"
 
-type link = {
-  sectionId: string,
-  label: string,
+module HeaderWrapper = {
+  @react.component
+  let make = (~children, ~sm=false) => {
+    let baseStyles = " bg-no-repeat h-5/6 flex flex-col justify-around items-center"
+    let styles =
+      switch sm {
+      | false => "bg-vector-1"
+      | true => "bg-vector-1-sm"
+      } ++
+      baseStyles
+
+    let id = sm ? "mobile-header-bg" : "desktop-header-bg"
+
+    <header id className={styles}> children </header>
+  }
 }
 
-let links = [
-  {
-    sectionId: "#sec-sobre",
-    label: "Sobre",
-  },
-  {
-    sectionId: "#programacao",
-    label: "Programação",
-  },
-  {
-    sectionId: "#sec-apoio",
-    label: "Apoio",
-  },
-  {
-    sectionId: "#sec-contato",
-    label: "Contato",
-  },
-]
-
-module Link = {
+module Summary = {
   @react.component
-  let make = (~label, ~href) => {
-    <Nav.Link href> {label->React.string} </Nav.Link>
-  }
+  let make = () =>
+    <main className="flex flex-col items-center justify-between h-3/5 w-full">
+      <h1 className="text-white text-center font-semibold text-4xl leading-snug">
+        {`11ª Semana de Ciência da Computação e Tecnologia da Informação`->React.string}
+      </h1>
+      <hr className="md:hidden border-2 border-white w-72" />
+      <p className="text-white-2 text-center leading-snug w-4/5">
+        {`Uma semana inteira de conteúdos, que acontecerá entre os dias 8 a 13 de novembro, sendo transmitido por uma plataforma privada no Discord!`->React.string}
+      </p>
+      <Next.Image
+        src="/assets/images/welcome.svg"
+        width="262"
+        height="209"
+        alt="Uma pessoa interagindo com seu notebook no colo, num evento presencial"
+      />
+    </main>
 }
 
 @react.component
 let make = () => {
-  <header>
-    <Navbar expand=#lg variant=#dark fixed=#top role="navigation">
-      <Navbar.Brand href="/"> {"SCTI"->React.string} </Navbar.Brand>
-      <Navbar.Toggle label="Toggle navigation" \"aria-controls"="navbarDropdown" />
-      <Navbar.Collapse id="navbarDropdown">
-        <Nav navbar=true justify=true variant=#dark className="mr-auto" navbarScroll=true>
-          <Nav.Link href="/" active=true> {"Home"->React.string} </Nav.Link>
-          {links->Render.map(({sectionId, label}, id) =>
-            <Link href={sectionId} key={id->Render.toString} label />
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  </header>
+  let isSm = ReactUse.useMedia("(max-width: 640px)")
+
+  <HeaderWrapper sm={isSm}>
+    <Navbar /> <Summary /> <LinkButton href={symplaURL} label="Inscreva-se" />
+  </HeaderWrapper>
 }
