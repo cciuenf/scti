@@ -36,6 +36,7 @@
     "postcss-cli": "^8.3.1",
     "rescript": "^9.1.4",
     "rescript-polished": "1.15.0",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.7",
+    "vercel": "^23.1.2"
   }
 }
