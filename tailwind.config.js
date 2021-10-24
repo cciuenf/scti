@@ -11,7 +11,9 @@ module.exports = {
   theme: {
     extend: {
       height: {
+        '5.2/6': '90%',
         '5.5/6': '93%',
+        'mid-screen': '85vh',
         100: '28.516rem',
         150: '77.031rem'
       },
