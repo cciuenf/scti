@@ -20,6 +20,9 @@ module.exports = {
         104: '30.083rem',
         200: '125.625rem'
       },
+      fontSize: {
+        '4.5xl': '2.68rem'
+      },
       colors: {
         blue: {
           DEFAULT: '#0C7DD8',

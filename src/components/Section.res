@@ -1,3 +1,3 @@
 @react.component
-let make = (~children) =>
-  <section className="flex flex-col justify-between items-center mt-2 h-5/6"> children </section>
+let make = (~children, ~height) =>
+  <section className=`flex flex-col justify-between items-center mb-20 mt-2 ${height}`> children </section>

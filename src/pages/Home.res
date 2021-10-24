@@ -1,3 +1,3 @@
 let default = () => {
-  <> <Header /> <About /> </>
+  <> <Header /> <About /> <Themes /> </>
 }
