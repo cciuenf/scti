@@ -15,7 +15,7 @@
 
 body {
   font: 400 1.350rem 'Spartan', sans-serif;
-  background: red;
+  background: #fff;
   /* #e5e5e5; */
   -webkit-font-smoothing: antialiased;
 }
@@ -79,4 +79,8 @@ button {
 .border-gradient {
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #4375E8 0%, #A94EF1 100%) 1;
+}
+
+.profile-shape {
+  clip-path: polygon(0 0, 59% 11%, 69% 74%, 0% 100%);
 }
