@@ -51,7 +51,9 @@ module.exports = {
     },
     backgroundImage: {
       'vector-1': 'url("/assets/geometry/landing/vector_1.svg")',
-      'vector-1-sm': 'url("/assets/geometry/landing/vector_1_mobile.svg")'
+      'vector-1-sm': 'url("/assets/geometry/landing/vector_1_mobile.svg")',
+      'control-l': 'url("/assets/geometry/landing/vector_8_l.svg")',
+      'control-r': 'url("/assets/geometry/landing/vector_8_r.svg")'
     },
     fontSize: {
       xs: '.75rem',

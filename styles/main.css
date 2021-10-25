@@ -53,7 +53,7 @@ button {
 .mobile-menu {
   width: 214px;
   height: 100%;
-  background: #fff;
+  background: red;
   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 23px 0px 0px 23px;
   transition: 0.5s;
@@ -79,8 +79,4 @@ button {
 .border-gradient {
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #4375E8 0%, #A94EF1 100%) 1;
-}
-
-.profile-shape {
-  clip-path: polygon(0 0, 59% 11%, 69% 74%, 0% 100%);
 }

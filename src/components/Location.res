@@ -2,8 +2,10 @@
 let make = () =>
   <Section height="h-screen">
     <SectionHeader border=#left label=`Período e local de realização` />
-    <div className="relative"> 
-      <span className="absolute"> <Next.Image width="280" height="280" src="/assets/geometry/landing/vector_4_2.svg" /> </span>
+    <div className="relative">
+      <span className="absolute">
+        <Next.Image width="280" height="280" src="/assets/geometry/landing/vector_4_2.svg" />
+      </span>
       <span> <Next.Image width="260" height="260" src="/assets/images/period.svg" /> </span>
     </div>
     <SectionParagraph>
