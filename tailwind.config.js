@@ -53,7 +53,9 @@ module.exports = {
       'vector-1': 'url("/assets/geometry/landing/vector_1.svg")',
       'vector-1-sm': 'url("/assets/geometry/landing/vector_1_mobile.svg")',
       'control-l': 'url("/assets/geometry/landing/vector_8_l.svg")',
-      'control-r': 'url("/assets/geometry/landing/vector_8_r.svg")'
+      'control-r': 'url("/assets/geometry/landing/vector_8_r.svg")',
+      'vector-1-pp': 'url("/assets/geometry/privacy_policy/vector_1.svg',
+      'vector-1-pp-sm': 'url("/assets/geometry/privacy_policy/vector_1_sm.svg'
     },
     fontSize: {
       xs: '.75rem',
